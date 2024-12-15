@@ -1,0 +1,3 @@
+/home/LiveToCode/jenkins/build/CMakeFiles/jenkin.dir
+/home/LiveToCode/jenkins/build/CMakeFiles/edit_cache.dir
+/home/LiveToCode/jenkins/build/CMakeFiles/rebuild_cache.dir
