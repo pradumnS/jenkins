@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         BUILD_DIR = 'build'  // Directory where the build will happen
-        SOURCE_DIR = '.'     // This assumes your CMakeLists.txt is in the root of the repo
     }
 
     stages {
@@ -20,10 +19,9 @@ pipeline {
                     // Create a build directory if it doesn't exist
                     sh 'mkdir -p $WORKSPACE/$BUILD_DIR'
 
-                    // Run CMake and make, explicitly setting the source directory
-                    // The source directory is where your CMakeLists.txt is located
-                    dir("$WORKSPACE") {
-                        sh 'cmake $WORKSPACE'  // Use WORKSPACE to ensure CMake looks in the correct directory
+                    // Run CMake and make, explicitly setting the source directory to the hardcoded path
+                    dir('/home/LiveToCode/jenkins') {  // Hardcoded path where CMakeLists.txt is located
+                        sh 'cmake .'
                         sh 'make'
                     }
                 }
